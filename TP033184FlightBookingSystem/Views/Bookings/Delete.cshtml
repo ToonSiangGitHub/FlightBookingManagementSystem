@@ -1,0 +1,48 @@
+﻿@model TP033184FlightBookingSystem.Models.Booking
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.seat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.flightname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight.flightname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.userName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

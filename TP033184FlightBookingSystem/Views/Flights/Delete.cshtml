@@ -1,0 +1,72 @@
+﻿@model TP033184FlightBookingSystem.Models.Flight
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.flightname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orgin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orgin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

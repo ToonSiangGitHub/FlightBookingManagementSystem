@@ -1,0 +1,42 @@
+﻿@model TP033184FlightBookingSystem.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.seat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.flightname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight.flightname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.userName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

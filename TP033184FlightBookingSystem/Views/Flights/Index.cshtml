@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TP033184FlightBookingSystem.Models.Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Flight Detail</h2>
+
+<p>
+    @Html.ActionLink("Add New Flight Information", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Flight Name
+        </th>
+        <th>
+            Departure Time
+        </th>
+        <th>
+            Origin
+        </th>
+        <th>
+           Destination
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Price (RM)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.flightname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orgin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.flightID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.flightID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.flightID })
+            </td>
+        </tr>
+    }
+
+</table>
